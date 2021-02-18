@@ -1,0 +1,7 @@
+version: '3'
+services:
+  first:
+    container_name: myfirstcontainer
+    ports:
+      - 5000:5000
+
