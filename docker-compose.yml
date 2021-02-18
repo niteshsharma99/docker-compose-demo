@@ -3,7 +3,11 @@ services:
   first:
     build:
       context: ./first
-    image: one
+      dockerfile: Dockerfile
+      args: 
+        - CENTOS_VERSION=${CENTOS_VERSION}
+    image: nitesh99sharma/hello_world:1.0
+    
     networks:
        - mynet
     ports:
@@ -13,7 +17,12 @@ services:
   second:
     build:
       context: ./second
-    image: second
+      dockeerfile: Dockerfile
+      args:
+        - CENTOS_VERSION=${CENTOS_VERSION}
+    image: nitesh99sharma/hello_world:2.0
+    volumes:
+       - myvol:/mydata
     networks:
        - mynet
     ports:
