@@ -17,7 +17,7 @@ services:
   second:
     build:
       context: ./second
-      dockeerfile: Dockerfile
+      dockerfile: Dockerfile
       args:
         - CENTOS_VERSION=${CENTOS_VERSION}
     image: nitesh99sharma/hello_world:2.0
