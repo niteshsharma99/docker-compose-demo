@@ -1,0 +1,25 @@
+version: '3'
+services:
+  first:
+    build:
+      context: ./first
+    image: one
+    networks:
+       - mynet
+    ports:
+      - 80:5000
+    volumes:
+      - myvol:/data
+  second:
+    build:
+      context: ./second
+    image: second
+    networks:
+       - mynet
+    ports:
+      - 5000:5000
+networks:
+  mynet:
+
+volumes:
+  myvol:
